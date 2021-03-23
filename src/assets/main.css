@@ -1,0 +1,74 @@
+/* custom font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+/* variables */
+:root {
+  --primary: #4f515a;
+  --secondary: #ebebeb;
+  --warning: #da0f41;
+}
+
+/* base styles  */
+* {
+  box-sizing: border-box;
+  color: var(--primary);
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fafafa;
+}
+a {
+  text-decoration: none;
+}
+
+/* buttons */
+button, .btn { 
+  display: inline-block;
+
+  background: var(--secondary);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+button:hover, .btn:hover {
+  background: var(--primary);
+  color: white;
+}
+button:disabled {
+  background: var(--secondary);
+  color: var(--primary);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* forms */
+form {
+  background: white;
+  border: 1px solid  var(--secondary);
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px rgba(50,50,50,0.05);
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 30px;
+}
+input, textarea {
+  display: block;
+
+  border: 0;
+  border-bottom: 1px solid var(--secondary);
+  margin: 20px auto;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+}
+
+/* error text */
+.error {
+  color: var(--warning);
+  font-size: 14px;
+  margin: 16px 0;
+}
