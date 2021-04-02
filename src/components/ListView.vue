@@ -1,20 +1,22 @@
 <template>
   <ul>
     <li v-for="pl in playlists" :key="pl.id">
-      <div class="single">
-        <div class="thumbnail">
-          <img :src="pl.coverUrl" :alt="pl.title" />
-        </div>
+      <router-link :to="{ name: 'PlaylistDetails', params: { id: pl.id } }">
+        <div class="single">
+          <div class="thumbnail">
+            <img :src="pl.coverUrl" :alt="pl.title" />
+          </div>
 
-        <div class="info">
-          <h3>{{ pl.title }}</h3>
-          <p>Created by {{ pl.userName }}</p>
-        </div>
+          <div class="info">
+            <h3>{{ pl.title }}</h3>
+            <p>Created by {{ pl.userName }}</p>
+          </div>
 
-        <div class="song-number">
-          <p>{{ pl.songs.length }} songs</p>
+          <div class="song-number">
+            <p>{{ pl.songs.length }} songs</p>
+          </div>
         </div>
-      </div>
+      </router-link>
     </li>
   </ul>
 </template>

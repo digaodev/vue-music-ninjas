@@ -65,7 +65,7 @@ export default {
 
         isPending.value = false;
 
-        if (!error.value) {
+        if (res && !error.value) {
           router.push({ name: "PlaylistDetails", params: { id: res.id } });
         }
       }
