@@ -5,7 +5,7 @@
       <h1><router-link :to="{ name: 'Home' }">Muso Ninjas</router-link></h1>
       <div class="links">
         <div v-if="user">
-          <span>Hi there, {{ user.displayName }}</span>
+          <router-link :to="{ name: 'CreatePlaylist'}">Create Your Playlist</router-link>
           <button @click="handleClick">Logout</button>
         </div>
         <div v-else>
@@ -25,7 +25,6 @@ import { useRouter } from 'vue-router'
 export default {
   setup() {
     const { user } = getUser()
-    console.log('***', user.value)
     const { logout } = useLogout()
     const router = useRouter()
 
