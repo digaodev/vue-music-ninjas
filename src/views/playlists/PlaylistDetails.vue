@@ -15,6 +15,7 @@
       <div v-if="!playlist.songs.length">
         No songs have been added to this playlist yet.
       </div>
+      
       <div v-for="song in playlist.songs" :key="song.id" class="single-song">
         <div class="details">
           <h3>{{ song.title }}</h3>
@@ -22,6 +23,8 @@
         </div>
         <button v-if="ownership" @click="handleClick(song.id)">delete</button>
       </div>
+
+      <AddSong :playlist="playlist" />
     </div>
   </div>
 </template>
@@ -30,6 +33,7 @@
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 
+import AddSong from "../../components/AddSong.vue";
 import useStorage from "../../composables/useStorage";
 import useDocument from "../../composables/useDocument";
 import getDocument from "../../composables/getDocument";
@@ -37,6 +41,7 @@ import getUser from "../../composables/getUser";
 
 export default {
   props: ["id"],
+  components: {AddSong},
   setup(props) {
     const router = useRouter();
     const { error, document: playlist } = getDocument("playlists", props.id);
