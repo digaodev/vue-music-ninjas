@@ -34,7 +34,7 @@ export default {
       const res = await login(email.value, password.value);
       console.log(res, error.value)
       if (res && !error.value) {
-        router.push({ name: 'Home' })
+        router.push({ name: 'UserPlaylists' })
       }
     }
 
